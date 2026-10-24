@@ -43,7 +43,7 @@ export default async function handler(req, res) {
     const base64 = fileBuffer.toString('base64');
 
     // Call ConvertAPI (Word → PDF)
-    const apiRes = await fetch(`https://v2.convertapi.com/convert/docx/to/pdf?Secret=${SECRET}`, {
+    const apiRes = await fetch(`https://v2.convertapi.com/convert/${ext.slice(1)}/to/pdf?Secret=${encodeURIComponent(SECRET)}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

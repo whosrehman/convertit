@@ -49,6 +49,7 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         Parameters: [
           { Name: 'File', FileValue: { Name: file.originalFilename, Data: base64 } },
+          { Name: 'Layout', Value: 'exact' },
           { Name: 'StoreFile', Value: true },
         ],
       }),
